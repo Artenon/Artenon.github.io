@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  background-color: #000;
+}
+
+.swiper {
+  height: 100%;
+}
+
+.swiper-wrapper {
+  will-change: transform;
+  transform-style: preserve-3d;
+}
+
+.swiper__layer {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+}
+
+.swiper__item {
+  overflow: hidden;
+}
+
+.swiper__item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  box-shadow: inset 0 0 300px rgba(0 0 0 / .4);
+}
+
+.particles {
+  position: absolute;
+  inset: 0;
+}
