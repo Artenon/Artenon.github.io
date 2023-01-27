@@ -15,9 +15,24 @@
 	<script src="libs/particles/particles.min.js" defer></script>
 	<script src="script.js" defer></script>
 </head>
-<body>
+<body class="modal-active">
 
-	<div class="swiper">
+	<div id="modal-container">
+		<div class="modal-background">
+
+			<div class="modal">
+				Welcome to<br>
+				<span class="witcher">The Witcher</span>
+				<img src="img/icons/wolf.png" alt="wolf" class="wolf">
+				<div class="hint">
+					Press <img src="img/icons/spacebar.png" alt="spacebar"> or click <img src="img/icons/mouse.png" alt="mouse"> to enter
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="swiper content">
 		<div class="swiper-wrapper">
 
 			<div class="swiper-slide swiper__item">
@@ -42,6 +57,8 @@
 			</div>
 
 		</div>
+
+		<div class="swiper-pagination"></div>
 	</div>
 	
 </body>

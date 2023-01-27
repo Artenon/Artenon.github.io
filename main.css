@@ -3,8 +3,20 @@
   padding: 0;
 }
 
+:root {
+  --index: calc(1vw + 1vh);
+}
+
+@font-face {
+  font-family: Witcher;
+  src: url(font/Thewitcher-jnOj.ttf);
+}
+
 html, body {
   height: 100%;
+  font-family: Witcher;
+  font-size: 30px;
+  color: #fff;
   background-color: #000;
 }
 
@@ -40,4 +52,124 @@ html, body {
 .particles {
   position: absolute;
   inset: 0;
+}
+
+.swiper-pagination-bullet {
+  background: #D3D4C4;
+}
+
+/* MODAL */
+
+html.modal-active,
+body.modal-active {
+  overflow: hidden;
+}
+
+#modal-container {
+  position: fixed;
+  display: table;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+#modal-container .modal-background {
+  display: flex;
+  background: rgba(0, 0, 0, 0.6);
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px);
+}
+
+#modal-container .modal-background .modal {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+
+#modal-container .modal-background .modal .witcher {
+  font-size: 70px;
+}
+
+.modal__icons {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wolf {
+  width: calc(var(--index) * 20);
+  color: #fff;
+}
+
+.hint {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  font-size: 16px;
+}
+
+.hint img {
+  width: 30px;
+  height: 30px;
+}
+
+#modal-container + .content {
+  transform: scale(0.8);
+}
+
+#modal-container.out {
+  animation: quickScaleDown 1.5s 0.5s linear forwards;
+}
+
+#modal-container.out .modal-background {
+  animation: fadeOut 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+#modal-container.out .modal-background .modal {
+  animation: scaleDown 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+#modal-container.out + .content {
+  animation: scaleForward 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    background: rgba(0, 0, 0, 0.6);
+  }
+  100% {
+    background: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(0px);
+  }
+}
+
+@keyframes scaleDown {
+  0% {
+    transform: scale(1) translateY(0px);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.8) translateY(1000px);
+    opacity: 0;
+  }
+}
+
+@keyframes quickScaleDown {
+  100% {
+    z-index: 0;
+  }
+}
+
+@keyframes scaleForward {
+  100% {
+    transform: scale(1);
+  }
 }
