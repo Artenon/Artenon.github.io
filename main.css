@@ -109,14 +109,14 @@ body.modal-active {
   color: #fff;
 }
 
-.hint {
+.welcome-hint {
   display: flex;
   align-items: center;
   margin-top: 30px;
   font-size: 16px;
 }
 
-.hint img {
+.welcome-hint img {
   width: 30px;
   height: 30px;
 }
@@ -142,9 +142,6 @@ body.modal-active {
 }
 
 @keyframes fadeOut {
-  0% {
-    background: rgba(0, 0, 0, 0.6);
-  }
   100% {
     background: rgba(0, 0, 0, 0);
     backdrop-filter: blur(0px);

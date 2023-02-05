@@ -28,7 +28,7 @@ modalContainer.addEventListener('click', () => {
   body.classList.remove('modal-active');
 });
 
-window.addEventListener('keypress', (e) => {
+document.addEventListener('keypress', (e) => {
   if (e.code === 'Space') {
     modalContainer.classList.add('out');
     body.classList.remove('modal-active');
