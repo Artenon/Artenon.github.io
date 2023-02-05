@@ -34,3 +34,8 @@ document.addEventListener('keypress', (e) => {
     body.classList.remove('modal-active');
   }
 });
+
+function OnLoadFn() {
+  const loading = document.querySelector('.loading');
+  loading.style.display = 'none';
+};
